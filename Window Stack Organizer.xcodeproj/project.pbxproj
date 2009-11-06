@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05069D8810A38B2D00D83D8B /* SDModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069C3410A355FA00D83D8B /* SDModelObject.m */; };
+		05069D8910A38B2D00D83D8B /* WSOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069D5110A36F7100D83D8B /* WSOController.m */; };
+		05069DD710A38EE700D83D8B /* TCSystemWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 05069DD510A38EE700D83D8B /* TCSystemWindow.h */; };
+		05069DD810A38EE700D83D8B /* TCSystemWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069DD610A38EE700D83D8B /* TCSystemWindow.m */; };
+		05069E7310A395D800D83D8B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		05069E7410A395E000D83D8B /* Window_Stack_OrganizerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* Window_Stack_OrganizerAppDelegate.m */; };
+		05069E7510A395E000D83D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		05069EA410A3971C00D83D8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		05069EA510A3971D00D83D8B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		05069EAD10A3975900D83D8B /* TCSystemWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069DD610A38EE700D83D8B /* TCSystemWindow.m */; };
+		05069EB010A3976100D83D8B /* SDModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069C3410A355FA00D83D8B /* SDModelObject.m */; };
+		05069EEE10A430E600D83D8B /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05069EED10A430E600D83D8B /* BWToolkitFramework.framework */; };
+		05069EFE10A4310B00D83D8B /* BWToolkitFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 05069EED10A430E600D83D8B /* BWToolkitFramework.framework */; };
+		05069EFF10A4310B00D83D8B /* WindowStackOrganizer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 05069D8110A38B1500D83D8B /* WindowStackOrganizer.framework */; };
+		05069F8210A43C7500D83D8B /* BlockExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069F8110A43C7500D83D8B /* BlockExtensions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05069EA210A3970700D83D8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05069D8010A38B1500D83D8B /* WSOFramework */;
+			remoteInfo = WSOFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05069EFB10A430F600D83D8B /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				05069EFE10A4310B00D83D8B /* BWToolkitFramework.framework in Copy Frameworks */,
+				05069EFF10A4310B00D83D8B /* WindowStackOrganizer.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05069C2E10A3244500D83D8B /* idea.graffle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = idea.graffle; sourceTree = "<group>"; };
+		05069C3310A355FA00D83D8B /* SDModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDModelObject.h; path = Vendor/SDModelObject/SDModelObject.h; sourceTree = "<group>"; };
+		05069C3410A355FA00D83D8B /* SDModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDModelObject.m; path = Vendor/SDModelObject/SDModelObject.m; sourceTree = "<group>"; };
+		05069C6810A35B5200D83D8B /* CGSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; };
+		05069CBA10A3668900D83D8B /* CoreGraphicsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsServices.h; sourceTree = "<group>"; };
+		05069D5010A36F7100D83D8B /* WSOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSOController.h; sourceTree = "<group>"; };
+		05069D5110A36F7100D83D8B /* WSOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSOController.m; sourceTree = "<group>"; };
+		05069D8110A38B1500D83D8B /* WindowStackOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WindowStackOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05069D8210A38B1500D83D8B /* WSOFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WSOFramework-Info.plist"; sourceTree = "<group>"; };
+		05069DD510A38EE700D83D8B /* TCSystemWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSystemWindow.h; sourceTree = "<group>"; };
+		05069DD610A38EE700D83D8B /* TCSystemWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSystemWindow.m; sourceTree = "<group>"; };
+		05069E2410A3946D00D83D8B /* Window Stack Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window Stack Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05069E2610A3946D00D83D8B /* Window Stack Organizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Window Stack Organizer-Info.plist"; sourceTree = "<group>"; };
+		05069EED10A430E600D83D8B /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Vendor/BWToolkitFramework.framework; sourceTree = "<group>"; };
+		05069F8010A43C7500D83D8B /* BlockExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockExtensions.h; sourceTree = "<group>"; };
+		05069F8110A43C7500D83D8B /* BlockExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockExtensions.m; sourceTree = "<group>"; };
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* Window_Stack_OrganizerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window_Stack_OrganizerAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* Window_Stack_OrganizerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window_Stack_OrganizerAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* Window_Stack_Organizer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window_Stack_Organizer_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05069D7F10A38B1500D83D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05069EA510A3971D00D83D8B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05069E2210A3946D00D83D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05069EA410A3971C00D83D8B /* Cocoa.framework in Frameworks */,
+				05069EEE10A430E600D83D8B /* BWToolkitFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3D80F4B6AC300CF3369 /* Window_Stack_OrganizerAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* Window_Stack_OrganizerAppDelegate.m */,
+				05069C3310A355FA00D83D8B /* SDModelObject.h */,
+				05069C3410A355FA00D83D8B /* SDModelObject.m */,
+				05069C6810A35B5200D83D8B /* CGSPrivate.h */,
+				05069CBA10A3668900D83D8B /* CoreGraphicsServices.h */,
+				05069D5010A36F7100D83D8B /* WSOController.h */,
+				05069D5110A36F7100D83D8B /* WSOController.m */,
+				05069DD510A38EE700D83D8B /* TCSystemWindow.h */,
+				05069DD610A38EE700D83D8B /* TCSystemWindow.m */,
+				05069F8010A43C7500D83D8B /* BlockExtensions.h */,
+				05069F8110A43C7500D83D8B /* BlockExtensions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05069D8110A38B1500D83D8B /* WindowStackOrganizer.framework */,
+				05069E2410A3946D00D83D8B /* Window Stack Organizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Window Stack Organizer */ = {
+			isa = PBXGroup;
+			children = (
+				05069C2E10A3244500D83D8B /* idea.graffle */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				05069E2610A3946D00D83D8B /* Window Stack Organizer-Info.plist */,
+			);
+			name = "Window Stack Organizer";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* Window_Stack_Organizer_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05069D8210A38B1500D83D8B /* WSOFramework-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05069EED10A430E600D83D8B /* BWToolkitFramework.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		05069D7C10A38B1500D83D8B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05069DD710A38EE700D83D8B /* TCSystemWindow.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		05069D8010A38B1500D83D8B /* WSOFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05069D8510A38B1600D83D8B /* Build configuration list for PBXNativeTarget "WSOFramework" */;
+			buildPhases = (
+				05069D7C10A38B1500D83D8B /* Headers */,
+				05069D7D10A38B1500D83D8B /* Resources */,
+				05069D7E10A38B1500D83D8B /* Sources */,
+				05069D7F10A38B1500D83D8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WSOFramework;
+			productName = WSOFramework;
+			productReference = 05069D8110A38B1500D83D8B /* WindowStackOrganizer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		05069E2310A3946D00D83D8B /* Window Stack Organizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05069E2910A3946E00D83D8B /* Build configuration list for PBXNativeTarget "Window Stack Organizer" */;
+			buildPhases = (
+				05069E2010A3946D00D83D8B /* Resources */,
+				05069EFB10A430F600D83D8B /* Copy Frameworks */,
+				05069E2110A3946D00D83D8B /* Sources */,
+				05069E2210A3946D00D83D8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05069EA310A3970700D83D8B /* PBXTargetDependency */,
+			);
+			name = "Window Stack Organizer";
+			productName = "Window Stack Organizer";
+			productReference = 05069E2410A3946D00D83D8B /* Window Stack Organizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Window Stack Organizer" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Window Stack Organizer */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05069D8010A38B1500D83D8B /* WSOFramework */,
+				05069E2310A3946D00D83D8B /* Window Stack Organizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05069D7D10A38B1500D83D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05069E2010A3946D00D83D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05069E7310A395D800D83D8B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05069D7E10A38B1500D83D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05069D8810A38B2D00D83D8B /* SDModelObject.m in Sources */,
+				05069D8910A38B2D00D83D8B /* WSOController.m in Sources */,
+				05069DD810A38EE700D83D8B /* TCSystemWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05069E2110A3946D00D83D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05069E7410A395E000D83D8B /* Window_Stack_OrganizerAppDelegate.m in Sources */,
+				05069E7510A395E000D83D8B /* main.m in Sources */,
+				05069EAD10A3975900D83D8B /* TCSystemWindow.m in Sources */,
+				05069EB010A3976100D83D8B /* SDModelObject.m in Sources */,
+				05069F8210A43C7500D83D8B /* BlockExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05069EA310A3970700D83D8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05069D8010A38B1500D83D8B /* WSOFramework */;
+			targetProxy = 05069EA210A3970700D83D8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05069D8310A38B1600D83D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "WSOFramework-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = WindowStackOrganizer;
+			};
+			name = Debug;
+		};
+		05069D8410A38B1600D83D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "WSOFramework-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = WindowStackOrganizer;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		05069E2710A3946E00D83D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "Window Stack Organizer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Window Stack Organizer";
+			};
+			name = Debug;
+		};
+		05069E2810A3946E00D83D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "Window Stack Organizer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Window Stack Organizer";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = Window_Stack_organizer_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = Window_Stack_organizer_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05069D8510A38B1600D83D8B /* Build configuration list for PBXNativeTarget "WSOFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05069D8310A38B1600D83D8B /* Debug */,
+				05069D8410A38B1600D83D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05069E2910A3946E00D83D8B /* Build configuration list for PBXNativeTarget "Window Stack Organizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05069E2710A3946E00D83D8B /* Debug */,
+				05069E2810A3946E00D83D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Window Stack Organizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
