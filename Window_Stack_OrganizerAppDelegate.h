@@ -13,6 +13,7 @@
 	NSWindow *window;
 	NSMutableArray *windows;
 	IBOutlet NSArrayController *windowsController;
+	IBOutlet NSTableView *table;
 }
 
 @property (assign) IBOutlet NSWindow *window;

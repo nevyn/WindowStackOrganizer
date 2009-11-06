@@ -22,6 +22,15 @@
 		05069EFE10A4310B00D83D8B /* BWToolkitFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 05069EED10A430E600D83D8B /* BWToolkitFramework.framework */; };
 		05069EFF10A4310B00D83D8B /* WindowStackOrganizer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 05069D8110A38B1500D83D8B /* WindowStackOrganizer.framework */; };
 		05069F8210A43C7500D83D8B /* BlockExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069F8110A43C7500D83D8B /* BlockExtensions.m */; };
+		0506A1B810A44FB000D83D8B /* BlockExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05069F8110A43C7500D83D8B /* BlockExtensions.m */; };
+		0506A4A410A4BE9500D83D8B /* CollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A49D10A4BE9500D83D8B /* CollectionUtils.m */; };
+		0506A4A510A4BE9500D83D8B /* ExceptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A49F10A4BE9500D83D8B /* ExceptionUtils.m */; };
+		0506A4A610A4BE9500D83D8B /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A4A110A4BE9500D83D8B /* Logging.m */; };
+		0506A4A710A4BE9500D83D8B /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A4A310A4BE9500D83D8B /* Test.m */; };
+		0506A4A810A4BEB100D83D8B /* CollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A49D10A4BE9500D83D8B /* CollectionUtils.m */; };
+		0506A4A910A4BEB100D83D8B /* ExceptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A49F10A4BE9500D83D8B /* ExceptionUtils.m */; };
+		0506A4AA10A4BEB100D83D8B /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A4A110A4BE9500D83D8B /* Logging.m */; };
+		0506A4AB10A4BEB100D83D8B /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A4A310A4BE9500D83D8B /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +75,14 @@
 		05069EED10A430E600D83D8B /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Vendor/BWToolkitFramework.framework; sourceTree = "<group>"; };
 		05069F8010A43C7500D83D8B /* BlockExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockExtensions.h; sourceTree = "<group>"; };
 		05069F8110A43C7500D83D8B /* BlockExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockExtensions.m; sourceTree = "<group>"; };
+		0506A49C10A4BE9500D83D8B /* CollectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionUtils.h; sourceTree = "<group>"; };
+		0506A49D10A4BE9500D83D8B /* CollectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionUtils.m; sourceTree = "<group>"; };
+		0506A49E10A4BE9500D83D8B /* ExceptionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionUtils.h; sourceTree = "<group>"; };
+		0506A49F10A4BE9500D83D8B /* ExceptionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionUtils.m; sourceTree = "<group>"; };
+		0506A4A010A4BE9500D83D8B /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		0506A4A110A4BE9500D83D8B /* Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logging.m; sourceTree = "<group>"; };
+		0506A4A210A4BE9500D83D8B /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		0506A4A310A4BE9500D83D8B /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -96,6 +113,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0506A49B10A4BE9500D83D8B /* JAUtil */ = {
+			isa = PBXGroup;
+			children = (
+				0506A49C10A4BE9500D83D8B /* CollectionUtils.h */,
+				0506A49D10A4BE9500D83D8B /* CollectionUtils.m */,
+				0506A49E10A4BE9500D83D8B /* ExceptionUtils.h */,
+				0506A49F10A4BE9500D83D8B /* ExceptionUtils.m */,
+				0506A4A010A4BE9500D83D8B /* Logging.h */,
+				0506A4A110A4BE9500D83D8B /* Logging.m */,
+				0506A4A210A4BE9500D83D8B /* Test.h */,
+				0506A4A310A4BE9500D83D8B /* Test.m */,
+			);
+			path = JAUtil;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +143,7 @@
 				05069DD610A38EE700D83D8B /* TCSystemWindow.m */,
 				05069F8010A43C7500D83D8B /* BlockExtensions.h */,
 				05069F8110A43C7500D83D8B /* BlockExtensions.m */,
+				0506A49B10A4BE9500D83D8B /* JAUtil */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -261,6 +294,11 @@
 				05069D8810A38B2D00D83D8B /* SDModelObject.m in Sources */,
 				05069D8910A38B2D00D83D8B /* WSOController.m in Sources */,
 				05069DD810A38EE700D83D8B /* TCSystemWindow.m in Sources */,
+				0506A1B810A44FB000D83D8B /* BlockExtensions.m in Sources */,
+				0506A4A810A4BEB100D83D8B /* CollectionUtils.m in Sources */,
+				0506A4A910A4BEB100D83D8B /* ExceptionUtils.m in Sources */,
+				0506A4AA10A4BEB100D83D8B /* Logging.m in Sources */,
+				0506A4AB10A4BEB100D83D8B /* Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +311,10 @@
 				05069EAD10A3975900D83D8B /* TCSystemWindow.m in Sources */,
 				05069EB010A3976100D83D8B /* SDModelObject.m in Sources */,
 				05069F8210A43C7500D83D8B /* BlockExtensions.m in Sources */,
+				0506A4A410A4BE9500D83D8B /* CollectionUtils.m in Sources */,
+				0506A4A510A4BE9500D83D8B /* ExceptionUtils.m in Sources */,
+				0506A4A610A4BE9500D83D8B /* Logging.m in Sources */,
+				0506A4A710A4BE9500D83D8B /* Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -411,4 +411,9 @@ extern OSStatus /* Assumed */ CGSLockWindowBackingStore(const CGSConnection cid 
 
 ///extern OSStatus CGSDragWindowRelativeToMouse(const CGSConnection cid, const CGSWindow wid, NSPoint point);
 
+OSStatus CGSFindWindowByGeometry(int cid, int zero, int one, int zero_again,
+                CGPoint *screen_point, CGPoint *window_coords_out,
+                int *wid_out, int *cid_out);
+
+
 #endif

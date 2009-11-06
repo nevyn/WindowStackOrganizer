@@ -10,6 +10,15 @@
 #import "BlockExtensions.h"
 #define oscheck(x) { OSStatus err = (x); if(err != noErr) NSLog(@"Error on " #x ": %d", err); }
 
+NSString * const WSOMoveWindowUpKey = @"eu.thirdcog.WSO.moveWindowUp";
+NSString * const WSOMoveWindowDownKey = @"eu.thirdcog.WSO.moveWindowDown";
+NSString * const WSOMoveWindowAboveOtherKey = @"eu.thirdcog.WSO.moveWindowUp";
+NSString * const WSOMoveWindowBelowOtherKey = @"eu.thirdcog.WSO.moveWindowDown";
+
+NSString * const WSOWindowIDKey = @"eu.thirdcog.WSO.CGSWindowID";
+NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
+
+
 @implementation TCSystemWindow
 @synthesize title, ident, app, bounds, layer;
 -(id)initFromDescription:(NSDictionary*)dict;
@@ -25,7 +34,17 @@
 }
 -(id)initFromCGSWindow:(CGSWindow)cgsWin;
 {
-	NSDictionary *desc = [[(id)CGWindowListCreateDescriptionFromArray((CFArrayRef)[NSArray arrayWithObject:[NSNumber numberWithInt:cgsWin]]) autorelease] objectAtIndex:0];
+	CFMutableArrayRef cgsObjs = CFArrayCreateMutable(kCFAllocatorDefault, 0, NULL);
+	CFArrayAppendValue(cgsObjs, ((const void*)(NSInteger)cgsWin));
+	
+	NSArray *descs = [(id)CGWindowListCreateDescriptionFromArray(cgsObjs) autorelease];
+
+	if(!descs || [descs count] == 0) {
+		NSLog(@"No descs matching window");
+		return nil;
+	}
+	
+	NSDictionary *desc = [descs objectAtIndex:0];
 	
 	return [self initFromDescription:desc];
 }
@@ -63,6 +82,15 @@
 {
 	oscheck(CGSSetWindowAlpha(_CGSDefaultConnection(), self.ident, 0.5));
 }
+-(void)unfade;
+{
+	oscheck(CGSSetWindowAlpha(_CGSDefaultConnection(), self.ident, 1.0));
+}
+-(void)moveWindow:(NSWindowOrderingMode)mode relativeTo:(TCSystemWindow*)other;
+{
+	NSLog(@"Moving %@ %@ %@", self, (mode == NSWindowAbove) ? @"above" : @"below", other);
+	oscheck(CGSOrderWindow(_CGSDefaultConnection(), self.ident, (CGSWindowOrderingMode)mode, other.ident));
+}
 
 -(NSImage*)image;
 {
@@ -79,5 +107,38 @@
 	
 	return cachedImage;
 }
+-(void)invalidateCache;
+{
+	[cachedImage release]; cachedImage = nil;
+}
 
+-(NSString*)description;
+{
+	return [NSString stringWithFormat:@"TCSystemWindow(%d) %@ > %@ @ %@", self.ident, self.app.localizedName, self.title, NSStringFromRect(self.bounds)];
+}
+
+@end
+
+
+@implementation NSArray (TCSystemWindowUnderCursor)
+-(TCSystemWindow*)windowUnderCursor;
+{
+	CGSConnection cid = _CGSDefaultConnection();
+	CGPoint curP = NSPointToCGPoint([NSEvent mouseLocation]);
+	curP.y = [[NSScreen mainScreen] frame].size.height - curP.y;
+	CGPoint outP;
+	int widOut;
+	int cidOut;
+	OSStatus err = CGSFindWindowByGeometry(cid, 0, 1, 0, &curP, &outP, &widOut, &cidOut);
+	if(err) {
+		NSLog(@"Failed getting window under cursor");
+		return nil;
+	}
+	for (TCSystemWindow *win in self) {
+		if(win.ident == widOut)
+			return win;
+	}
+	NSLog(@"Didn't find a window under the cursor");
+	return nil;
+}
 @end

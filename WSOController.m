@@ -10,6 +10,7 @@
 
 static WSOController *singleton;
 
+
 @interface WSOController ()
 @property (retain) NSMutableArray *windows;
 @end
@@ -38,16 +39,48 @@ static WSOController *singleton;
 -(void)awakeFromStart;
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		
+	
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
+																											selector:@selector(moveWindowUp:)
+																													name:WSOMoveWindowUpKey
+																												object:nil
+																						suspensionBehavior:NSNotificationSuspensionBehaviorHold];
+	
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
+																											selector:@selector(moveWindowDown:)
+																													name:WSOMoveWindowDownKey object:nil
+																						suspensionBehavior:NSNotificationSuspensionBehaviorHold];
+																						
+	for (TCSystemWindow *win in [TCSystemWindow allWindows]) {
+		[win unfade];
+	}
 	
 	[pool release];
 }
 -(void)dealloc;
 {
+	[[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:WSOMoveWindowUpKey object:nil];
+	[[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:WSOMoveWindowDownKey object:nil];
 	[super dealloc];
 }
 
+-(void)moveWindowUp:(NSNotification*)notif;
+{
+	TCSystemWindow *window = [TCSystemWindow windowFromCGSWindow:[[[notif userInfo] objectForKey:WSOWindowIDKey] intValue]];
+	TCSystemWindow *other = nil;
+	if([[notif userInfo] objectForKey:WSOOtherWindowIDKey])
+		other = [TCSystemWindow windowFromCGSWindow:[[[notif userInfo] objectForKey:WSOOtherWindowIDKey] intValue]];
+	[window moveWindow:NSWindowAbove relativeTo:other]; 
+}
 
+-(void)moveWindowDown:(NSNotification*)notif;
+{
+	TCSystemWindow *window = [TCSystemWindow windowFromCGSWindow:[[[notif userInfo] objectForKey:WSOWindowIDKey] intValue]];
+	TCSystemWindow *other = nil;
+	if([[notif userInfo] objectForKey:WSOOtherWindowIDKey])
+		other = [TCSystemWindow windowFromCGSWindow:[[[notif userInfo] objectForKey:WSOOtherWindowIDKey] intValue]];
+	[window moveWindow:NSWindowAbove relativeTo:other];
+}
 
 
 @end
