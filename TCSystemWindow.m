@@ -24,7 +24,7 @@
 }
 -(id)initFromCGSWindow:(CGSWindow)cgsWin;
 {
-	NSDictionary *desc = [[(id)CGWindowListCreateDescriptionFromArray([NSArray arrayWithObject:[NSNumber numberWithInt:cgsWin]]) autorelease] objectAtIndex:0]
+	NSDictionary *desc = [[(id)CGWindowListCreateDescriptionFromArray((CFArrayRef)[NSArray arrayWithObject:[NSNumber numberWithInt:cgsWin]]) autorelease] objectAtIndex:0];
 	
 	return [self initFromDescription:desc];
 }
