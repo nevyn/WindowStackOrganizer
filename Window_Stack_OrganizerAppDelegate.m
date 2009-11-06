@@ -31,7 +31,9 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[[self mutableArrayValueForKey:@"windows"] addObjectsFromArray:[TCSystemWindow allWindows]];	
+	[[self mutableArrayValueForKey:@"windows"] addObjectsFromArray:[TCSystemWindow allWindows]];
+	NSArray *forbiddenIdentifiers = [NSArray arrayWithObjects:[[NSBundle mainBundle] bundleIdentifier], nil];
+	[windowsController setFilterPredicate:[NSPredicate predicateWithFormat:@"layer = %@ && NOT (app.bundleIdentifier in %@)", [NSNumber numberWithInt:kCGNormalWindowLevel], forbiddenIdentifiers]];
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification;

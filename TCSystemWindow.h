@@ -12,10 +12,13 @@
 
 @interface TCSystemWindow : SDModelObject {
 	NSImage *cachedImage;
+	NSRect bounds;
 }
-@property (retain) NSString *appName;
 @property (retain) NSString *title;
 @property CGSWindow ident;
+@property (retain) NSRunningApplication *app;
+@property NSRect bounds;
+@property int layer;
 
 -(NSImage*)image;
 

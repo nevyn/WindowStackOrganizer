@@ -11,15 +11,16 @@
 #define oscheck(x) { OSStatus err = (x); if(err != noErr) NSLog(@"Error on " #x ": %d", err); }
 
 @implementation TCSystemWindow
-@synthesize appName, title, ident;
+@synthesize title, ident, app, bounds, layer;
 -(id)initFromDescription:(NSDictionary*)dict;
 {
 	if(![super init]) return nil;
 	
 	self.title = [dict objectForKey:(id)kCGWindowName];
-	self.appName = [dict objectForKey:(id)kCGWindowOwnerName];
 	self.ident = [[dict objectForKey:(id)kCGWindowNumber] intValue];
-	
+	self.app = [NSRunningApplication runningApplicationWithProcessIdentifier:[[dict objectForKey:(id)kCGWindowOwnerPID] intValue]];
+	CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)[dict objectForKey:(id)kCGWindowBounds], (CGRect*)&bounds);
+	self.layer = [[dict objectForKey:(id)kCGWindowLayer] intValue];
 	return self;
 }
 -(id)initFromCGSWindow:(CGSWindow)cgsWin;
