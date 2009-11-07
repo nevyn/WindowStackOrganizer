@@ -31,6 +31,8 @@ NSString * const WSOWindowRowType = @"eu.thirdcog.WSO.windowRow";
 }
 -(void)dealloc;
 {
+	[NSEvent removeMonitor:globalEventHandler];
+	[NSEvent removeMonitor:localEventHandler];
 	self.windows = nil;
 	[super dealloc];
 }
@@ -40,8 +42,29 @@ NSString * const WSOWindowRowType = @"eu.thirdcog.WSO.windowRow";
 	[windowsController setFilterPredicate:[NSPredicate predicateWithFormat:@"layer = %@ && NOT (app.bundleIdentifier in %@)", [NSNumber numberWithInt:kCGNormalWindowLevel], forbiddenIdentifiers]];
 	
 	[table registerForDraggedTypes:[NSArray arrayWithObjects:WSOWindowRowType, nil]];
-
 	
+	globalEventHandler = [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask|NSKeyUpMask handler:^(NSEvent *evt) {
+		BOOL ourEvent = YES;
+		ourEvent &= (evt.modifierFlags & NSCommandKeyMask) > 0; // Command key is held
+		ourEvent &= evt.keyCode == 10; // Top-left-most key (§) on my keyboard at least
+		
+		if(!ourEvent) return;
+		
+		
+		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+		[self.window makeKeyAndOrderFront:nil];
+	}];
+	globalEventHandler = [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyDownMask|NSKeyUpMask handler:^ NSEvent * (NSEvent *evt) {
+		BOOL ourEvent = YES;
+		ourEvent &= (evt.modifierFlags & NSCommandKeyMask) > 0; // Command key is held
+		ourEvent &= evt.keyCode == 10; // Top-left-most key (§) on my keyboard at least
+		
+		if(!ourEvent) return evt;
+		
+		[[NSApplication sharedApplication] hide:nil];
+		
+		return nil;
+	}];
 }
 
 -(void)reload;
@@ -49,7 +72,10 @@ NSString * const WSOWindowRowType = @"eu.thirdcog.WSO.windowRow";
 	[[self mutableArrayValueForKey:@"windows"] setArray:[TCSystemWindow allWindows]];
 	[table reloadData];
 }
-
+- (void)windowDidResignKey:(NSNotification *)notification;
+{
+	[self.window orderOut:nil];
+}
 - (void)windowDidBecomeKey:(NSNotification *)notification;
 {
 	[self reload];	

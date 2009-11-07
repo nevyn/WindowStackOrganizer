@@ -14,6 +14,7 @@
 	NSMutableArray *windows;
 	IBOutlet NSArrayController *windowsController;
 	IBOutlet NSTableView *table;
+	id globalEventHandler, localEventHandler;
 }
 
 @property (assign) IBOutlet NSWindow *window;
