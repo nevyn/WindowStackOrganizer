@@ -1,0 +1,3 @@
+#!/bin/bash
+export DYLD_INSERT_LIBRARIES=<<WSOPATH>>:$DYLD_INSERT_LIBRARIES
+exec /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock_WSOMovedAside

@@ -21,7 +21,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="751"/>
+			<integer value="740"/>
 			<integer value="572"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -358,7 +358,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="876652389">
-				<int key="NSWindowStyleMask">8223</int>
+				<int key="NSWindowStyleMask">8209</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{196, 21}, {193, 489}}</string>
 				<int key="NSWTFlags">611844096</int>
@@ -501,13 +501,13 @@
 												</object>
 											</object>
 											<double key="NSRowHeight">90</double>
-											<int key="NSTvFlags">-692060160</int>
+											<int key="NSTvFlags">-759169024</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
 											<int key="NSColumnAutoresizingStyle">4</int>
 											<int key="NSDraggingSourceMaskForLocal">15</int>
 											<int key="NSDraggingSourceMaskForNonLocal">0</int>
-											<bool key="NSAllowsTypeSelect">YES</bool>
+											<bool key="NSAllowsTypeSelect">NO</bool>
 											<int key="NSTableViewDraggingDestinationStyle">0</int>
 										</object>
 									</object>
@@ -1303,7 +1303,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">779</int>
+			<int key="maxID">785</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1322,12 +1322,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>globalEventHandler</string>
+							<string>localEventHandler</string>
 							<string>table</string>
 							<string>window</string>
 							<string>windowsController</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>NSTableView</string>
 							<string>NSWindow</string>
 							<string>NSArrayController</string>

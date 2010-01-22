@@ -29,6 +29,8 @@ static WSOController *singleton;
 	singleton = [[WSOController alloc] init];
 	[singleton performSelector:@selector(awakeFromStart) withObject:nil afterDelay:0.1];
 	[pool release];
+	
+	unsetenv("DYLD_INSERT_LIBRARIES");
 }
 -(id)init;
 {

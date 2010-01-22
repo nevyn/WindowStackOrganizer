@@ -20,7 +20,7 @@ NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
 
 
 @implementation TCSystemWindow
-@synthesize title, ident, app, bounds, layer;
+@synthesize title, ident, app, bounds, layer, desc;
 -(id)initFromDescription:(NSDictionary*)dict;
 {
 	if(![super init]) return nil;
@@ -30,6 +30,7 @@ NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
 	self.app = [NSRunningApplication runningApplicationWithProcessIdentifier:[[dict objectForKey:(id)kCGWindowOwnerPID] intValue]];
 	CGRectMakeWithDictionaryRepresentation((CFDictionaryRef)[dict objectForKey:(id)kCGWindowBounds], (CGRect*)&bounds);
 	self.layer = [[dict objectForKey:(id)kCGWindowLayer] intValue];
+	self.desc = dict;
 	return self;
 }
 -(id)initFromCGSWindow:(CGSWindow)cgsWin;
@@ -44,9 +45,9 @@ NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
 		return nil;
 	}
 	
-	NSDictionary *desc = [descs objectAtIndex:0];
+	NSDictionary *desc1 = [descs objectAtIndex:0];
 	
-	return [self initFromDescription:desc];
+	return [self initFromDescription:desc1];
 }
 +(id)windowFromDescription:(NSDictionary*)dict;
 {
@@ -109,7 +110,19 @@ NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
 }
 -(void)invalidateCache;
 {
+	[self willChangeValueForKey:@"image"];
 	[cachedImage release]; cachedImage = nil;
+	[self didChangeValueForKey:@"image"];
+}
+
++ (NSSet*) keysToUseAsUniqueIdentifiers {
+	return [NSSet setWithObject:@"ident"];
+}
+- (BOOL) isEqual:(id)other {
+	if ([other isKindOfClass:[self class]] == NO)
+		return NO;
+	
+	return self.ident == ((TCSystemWindow*)other).ident;
 }
 
 -(NSString*)description;
@@ -121,10 +134,10 @@ NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
 
 
 @implementation NSArray (TCSystemWindowUnderCursor)
--(TCSystemWindow*)windowUnderCursor;
+-(TCSystemWindow*)windowUnderPoint:(NSPoint)p;
 {
 	CGSConnection cid = _CGSDefaultConnection();
-	CGPoint curP = NSPointToCGPoint([NSEvent mouseLocation]);
+	CGPoint curP = NSPointToCGPoint(p);
 	curP.y = [[NSScreen mainScreen] frame].size.height - curP.y;
 	CGPoint outP;
 	int widOut;
@@ -140,5 +153,38 @@ NSString * const WSOOtherWindowIDKey = @"eu.thirdcog.WSO.OtherCGSWindowID";
 	}
 	NSLog(@"Didn't find a window under the cursor");
 	return nil;
+}
+@end
+
+@implementation NSMutableArray (TCSystemWindowMerge)
+-(void)mergeWithTCSystemWindowArray:(NSArray *)others;
+{
+	// This method depends on TCSystemWindow's isEqual only comparing `ident`,
+	// which means two different objects representing the same window will be
+	// seen as identical.
+	 
+	// Remove windows that have disappeared
+	for (TCSystemWindow *window in [[self copy] autorelease])
+		if( ! [others containsObject:window])
+		 [self removeObject:window];
+	
+	
+	// Add windows that have appeared
+	for(TCSystemWindow *other in others)
+		if([self containsObject:other]) //Update local copy
+			[[self objectAtIndex:[self indexOfObject:other]] initFromDescription:other.desc];
+		else
+			[self addObject:other];
+	
+	// Match sort order
+	// Doesn't work :(
+	for(int i = 0; i < [self count]; i++) {
+		TCSystemWindow *other = [others objectAtIndex:i];
+		int ownIndexOfOther = [self indexOfObject:other];
+		if(i == ownIndexOfOther) continue;
+		
+		[self exchangeObjectAtIndex:i withObjectAtIndex:ownIndexOfOther];
+	}
+	NSLog(@"These should be identical: %@ \n \n %@", self, others);
 }
 @end

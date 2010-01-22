@@ -31,6 +31,9 @@
 		0506A4A910A4BEB100D83D8B /* ExceptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A49F10A4BE9500D83D8B /* ExceptionUtils.m */; };
 		0506A4AA10A4BEB100D83D8B /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A4A110A4BE9500D83D8B /* Logging.m */; };
 		0506A4AB10A4BEB100D83D8B /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A4A310A4BE9500D83D8B /* Test.m */; };
+		0506A80F10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506A80E10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.m */; };
+		0506A81110A7577E00D83D8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0506A81010A7577E00D83D8B /* Security.framework */; };
+		0506A85610A75CF500D83D8B /* trampoline_template in Resources */ = {isa = PBXBuildFile; fileRef = 0506A85510A75CF500D83D8B /* trampoline_template */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 05069D8010A38B1500D83D8B /* WSOFramework */;
+			remoteGlobalIDString = 05069D8010A38B1500D83D8B;
 			remoteInfo = WSOFramework;
 		};
 /* End PBXContainerItemProxy section */
@@ -83,6 +86,10 @@
 		0506A4A110A4BE9500D83D8B /* Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logging.m; sourceTree = "<group>"; };
 		0506A4A210A4BE9500D83D8B /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		0506A4A310A4BE9500D83D8B /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		0506A80D10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+TRAuthorizedCopy.h"; sourceTree = "<group>"; };
+		0506A80E10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+TRAuthorizedCopy.m"; sourceTree = "<group>"; };
+		0506A81010A7577E00D83D8B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0506A85510A75CF500D83D8B /* trampoline_template */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = trampoline_template; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -107,6 +114,7 @@
 			files = (
 				05069EA410A3971C00D83D8B /* Cocoa.framework in Frameworks */,
 				05069EEE10A430E600D83D8B /* BWToolkitFramework.framework in Frameworks */,
+				0506A81110A7577E00D83D8B /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +152,8 @@
 				05069F8010A43C7500D83D8B /* BlockExtensions.h */,
 				05069F8110A43C7500D83D8B /* BlockExtensions.m */,
 				0506A49B10A4BE9500D83D8B /* JAUtil */,
+				0506A80D10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.h */,
+				0506A80E10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0506A85510A75CF500D83D8B /* trampoline_template */,
 				05069D8210A38B1500D83D8B /* WSOFramework-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -195,6 +206,7 @@
 			children = (
 				05069EED10A430E600D83D8B /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				0506A81010A7577E00D83D8B /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -281,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05069E7310A395D800D83D8B /* MainMenu.xib in Resources */,
+				0506A85610A75CF500D83D8B /* trampoline_template in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +328,7 @@
 				0506A4A510A4BE9500D83D8B /* ExceptionUtils.m in Sources */,
 				0506A4A610A4BE9500D83D8B /* Logging.m in Sources */,
 				0506A4A710A4BE9500D83D8B /* Test.m in Sources */,
+				0506A80F10A7575300D83D8B /* NSFileManager+TRAuthorizedCopy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

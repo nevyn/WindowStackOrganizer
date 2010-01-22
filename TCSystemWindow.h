@@ -33,6 +33,7 @@ extern NSString * const WSOOtherWindowIDKey;
 @property (retain) NSRunningApplication *app;
 @property NSRect bounds;
 @property int layer;
+@property (retain) NSDictionary *desc;
 
 -(NSImage*)image;
 -(void)invalidateCache;
@@ -46,6 +47,8 @@ extern NSString * const WSOOtherWindowIDKey;
 @end
 
 @interface NSArray (TCSystemWindowUnderCursor)
--(TCSystemWindow*)windowUnderCursor;
-
+-(TCSystemWindow*)windowUnderPoint:(NSPoint)p;
+@end
+@interface NSMutableArray (TCSystemWindowMerge)
+-(void)mergeWithTCSystemWindowArray:(NSArray *)other;
 @end

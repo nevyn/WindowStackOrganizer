@@ -15,6 +15,7 @@
 	IBOutlet NSArrayController *windowsController;
 	IBOutlet NSTableView *table;
 	id globalEventHandler, localEventHandler;
+  AuthorizationRef authRef;
 }
 
 @property (assign) IBOutlet NSWindow *window;
